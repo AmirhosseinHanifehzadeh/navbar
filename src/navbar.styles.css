@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --myColor: #222327;
+    --secodaryColor: #e9e8ee;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--secodaryColor);
+}
+.navigation {
+    width: 430px;
+    height: 75px;
+    background: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.navigation ul{
+    display: flex;
+    width: 350px;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 78px;
+    height: 77px;
+    z-index: 1;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    align-items: center;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--myColor);
+}
+
+.navigation ul li.active a .icon{
+    transform: translateY(-32px);
+}
+
+.navigation ul li a .text{
+    position: absolute;
+    color: var(--myColor);
+    font-weight: 400;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(18px);
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation ul li .text{
+    position: absolute;    
+    justify-content: center;
+}
+
+.navigation ul li.active a .text{
+    opacity: 1;
+    transform: translateY(15px);
+}
+
+.indicator{
+    position: absolute;
+    top: -55%;
+    width: 78px;
+    height: 78px;
+    background-color: #14FFEC;
+    border-radius: 50%;
+    border: 6px solid var(--secodaryColor);
+    transition: 0.5s;
+    align-items: center;
+    transform: translateX(-3px);
+    transition:0.3s right ease-out;
+}
+
+.indicator::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: calc(50% - 0.439px);
+    left: calc(-25% + 2.29px);
+    background: white;
+    border-top-right-radius: 50px;
+    border-color: var(--secodaryColor);
+    border-top: solid var(--secodaryColor) 3px;
+    border-right: solid var(--secodaryColor) 3.2px;
+}
+.indicator::after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: calc(50% - 0.439px);
+    right: calc(-25% + 2.29px);
+    background: white;
+    border-top-left-radius: 50px;
+    border-color: var(--secodaryColor);
+    border-top: solid var(--secodaryColor) 3px;
+    border-left: solid var(--secodaryColor) 3.2px;
+}
+.indicator .right0{
+    right: 0.5%;
+}
+.indicator.right1{
+    right: 56.75%;
+}
+
+.indicator.right2{
+    right: 40.25%;
+}
+
+.indicator.right3{
+    right: 24%;
+}
+
+.indicator.right4{
+    right: 8%;
+}
